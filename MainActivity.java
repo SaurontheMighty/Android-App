@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Animation btn_ani;
     Button btnsplash;
     Button btntimer;
+    Button btnactualtimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         als = findViewById(R.id.als);
         btnsplash = findViewById(R.id.btnsplash);
         btntimer = findViewById(R.id.btntimer);
+        btnactualtimer = findViewById(R.id.btnactualtimer);
 
         //load anim
         als_ani = AnimationUtils.loadAnimation( this, R.anim.als_ani);
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         als.startAnimation(als_ani);
         btnsplash.startAnimation(btn_ani);
         btntimer.startAnimation(btn_ani);
+        btnactualtimer.startAnimation(btn_ani);
 
 
         btnsplash.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
         );
 
+        btnactualtimer.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View a) {
+                                            Intent b = new Intent(MainActivity.this, set_actualtimer.class);
+                                            b.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                                            startActivity(b);}
+                                    }
+
+        );
+
         //import font
         Typeface regular = Typeface.createFromAsset(getAssets(), "MRegular.ttf");
 
@@ -66,5 +79,6 @@ public class MainActivity extends AppCompatActivity {
         als.setTypeface(regular);
         btnsplash.setTypeface(regular);
         btntimer.setTypeface(regular);
+        btnactualtimer.setTypeface(regular);
     }
 }
