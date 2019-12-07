@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".stopwatch_act"></activity>
         <activity android:name=".timer_act"></activity>
-
+        <activity android:name=".set_actualtimer"></activity>
+        <activity android:name=".actualtimer_act"></activity>
     </application>
 
 </manifest>
